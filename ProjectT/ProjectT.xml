@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjectT</name>
+    </assembly>
+    <members>
+        <member name="T:ProjectT.Controllers.CardController">
+            <summary>
+            卡片管理
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ProjectT.Controllers.CardController.#ctor(AutoMapper.IMapper,ProjectT.Service.Interface.ICardService)">
+            <summary>
+            建構式
+            </summary>
+        </member>
+        <member name="M:ProjectT.Controllers.CardController.GetList(ProjectT.Dtos.Parameter.CardSearchParameter)">
+            <summary>
+            查詢卡片列表
+            </summary>
+            <param name="parameter">卡片查詢條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectT.Controllers.CardController.Get(System.Int32)">
+            <summary>
+            查詢卡片
+            </summary>
+            <remarks>我是附加說明</remarks>
+            <param name="id">卡片編號</param>
+            <returns></returns>      
+        </member>
+        <member name="M:ProjectT.Controllers.CardController.Insert(ProjectT.Dtos.Parameter.CardParameter)">
+            <summary>
+            新增卡片
+            </summary>
+            <param name="parameter">卡片參數</param>
+            <returns></returns>
+            <response code="200">回傳ok</response>
+            <response code="400">參數檢查失敗</response>
+            <response code="500">新增失敗</response>    
+        </member>
+        <member name="M:ProjectT.Controllers.CardController.Update(System.Int32,ProjectT.Dtos.Parameter.CardParameter)">
+            <summary>
+            更新卡片
+            </summary>
+            <param name="id">卡片編號</param>
+            <param name="parameter">卡片參數</param>
+            <returns></returns>
+            <response code="200">回傳ok</response>
+            <response code="400">找不到卡片</response>
+            <response code="500">更新失敗</response>   
+        </member>
+        <member name="M:ProjectT.Controllers.CardController.Delete(System.Int32)">
+            <summary>
+            刪除卡片
+            </summary>
+            <param name="id">卡片編號</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectT.Dtos.Parameter.CardParameter">
+            <summary>
+            卡片參數
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardParameter.Name">
+            <summary>
+            卡片名稱
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardParameter.Description">
+            <summary>
+            卡片描述
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardParameter.Attack">
+            <summary>
+            攻擊力
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardParameter.Health">
+            <summary>
+            血量
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardParameter.Cost">
+            <summary>
+            花費
+            </summary>
+        </member>
+        <member name="T:ProjectT.Dtos.Parameter.CardSearchParameter">
+            <summary>
+            卡片搜尋參數
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.Name">
+            <summary>
+            卡片名稱
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.MinAttack">
+            <summary>
+            攻擊力下限
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.MaxAttack">
+            <summary>
+            攻擊力上限
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.MinHealth">
+            <summary>
+            血量下限
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.MaxHealth">
+            <summary>
+            血量上限
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.MinCost">
+            <summary>
+            花費值下限
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.Parameter.CardSearchParameter.MaxCost">
+            <summary>
+            花費值上限
+            </summary>
+        </member>
+        <member name="T:ProjectT.Dtos.ViewModel.CardViewModel">
+            <summary>
+            卡片
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.Id">
+            <summary>
+            卡片編號
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.Name">
+            <summary>
+            卡片名稱
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.Description">
+            <summary>
+            卡片描述
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.Attack">
+            <summary>
+            攻擊力
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.Health">
+            <summary>
+            血量
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.Cost">
+            <summary>
+            花費
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.CardType">
+            <summary>
+            卡片種類代號
+            </summary>
+        </member>
+        <member name="P:ProjectT.Dtos.ViewModel.CardViewModel.CardTypeName">
+            <summary>
+            卡片種類名稱
+            </summary>
+        </member>
+        <member name="T:ProjectT.Infrastructure.Mappings.ControllerMappings">
+            <summary>
+            automapper轉換
+            </summary>
+        </member>
+        <member name="M:ProjectT.Infrastructure.Mappings.ControllerMappings.#ctor">
+            <summary>
+            automapper轉換
+            </summary>
+        </member>
+        <member name="T:ProjectT.Infrastructure.Validators.CardParameterValidator">
+            <summary>
+            Card Parameter 的驗證器
+            </summary>
+        </member>
+        <member name="M:ProjectT.Infrastructure.Validators.CardParameterValidator.#ctor">
+            <summary>
+            驗證器的建構式: 在這裡註冊我們要驗證的規則
+            </summary>
+        </member>
+        <member name="T:ProjectT.Program">
+            <summary>
+            程式起始點
+            </summary>
+        </member>
+        <member name="M:ProjectT.Program.Main(System.String[])">
+            <summary>
+            程式起始點
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:ProjectT.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            建立web啟動點
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ProjectT.Startup">
+            <summary>
+            啟動點
+            </summary>
+        </member>
+        <member name="M:ProjectT.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            啟動點
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:ProjectT.Startup.Configuration">
+            <summary>
+            組態設定
+            </summary>
+        </member>
+        <member name="M:ProjectT.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            註冊服務
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ProjectT.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            組態設定
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
